@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>3D printing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Valgeir Einarsson</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+                            <li><a href="aboutme.html">About me</a></li>
+							<li>
+								<a href="#">Portfolio</a>
+								<ul>
+									<li><a href="framleiðsluferli.html">Manufacturing Processes</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>3D printing and photogrammetry</h2>
+							<p>Project 3</p>
+						</header>
+
+						<!-- Text -->
+							<section>
+								<h3>Project description</h3>
+                                <p>For this project we should 3D print a model which we would not be able to manufacture with subtractive manufacturing, and 3D scan a object with photogrammetry. Prior to 3D printing we should determine the printer constraints by printing out a test with some useful geometry to test the constraints. In addition to the 3D printing part of this project we should scan an 3D object using some photogrammetry software.</p>
+
+								<hr />
+                                
+                                <header>
+									<h3>Printing constraints</h3>
+                                </header>
+                                <p>I grouped up with my fellow mechanical engineering students: <a href="https://arnorbreki.github.io/project1/index.html">Arnór</a>, <a href="https://halldorgauti.github.io/vefsida/">Halldór</a> and <a href="https://sveppikrull.github.io/Vefsida/">Sverrir</a>. Hafliði reccomended a test in one of his lectures, a all in one 3D printer test. The printing time for this test was extreemly long, I don't quit remeber it but it was long. Therefor we decided to use a mini version of this same test, we got the test from this <a href="https://www.thingiverse.com/thing:2806295">link</a>. We used the default settings that came with the test, to replicate the test from the link above. For the test we used Prusa i3 MK3S, with the following settings, and no custom settings where changed:</p>
+                                <img src="images/Test.png" style="width:70%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>The test took about 4 hours to print.</p>
+                                <img src="images/prusa.JPG" style="width:40%;" alt="" />
+                                <br>
+                                <br>
+                                 
+                                
+                                <p>It passed most of the constraints criteria. Some notable contraints it passed are:</p>
+                                <ol>
+                                    <li>Bridging for at least 25mm.</li><br>
+                                    <li>Minimum distance between walls can go down to at least 0.6mm.</li><br>
+                                    <li>Both cylenders looked fine, the smaller one has a inner diameter of 4mm.</li><br>
+                                </ol>
+                                    
+                                    
+                                <p>Some fails in the print:</p>
+                                <ol>
+                                    <li>Overhang failed at about 60 degrees. To solve this one could add support under overhangs over 60 degrees, but there are many diffrent soulutions available. </li><br>
+                                    <li>Minor stringing between objects with some horizontal distance apart but in the same vertical height. To fix the issue retraction settings are often changed.</li><br>
+                                    <li>The smallest hole size in the test was a little bit sketchy, so I would not recommend to go smaller than a 2mm diameter hole.</li><br>
+                                    <li>The extruded triangles looked almost like the extruded rectangles, so I would say they failed.</li><br>
+                                    <img src="images/3dtest_fail.PNG" style="width:40%;" alt="" /> 
+                                </ol>
+                                
+                                <p>Here are some photos of the test after printing it out. From these photos it's difficult to see which constraints hold and which fail:</p>
+                                <img src="images/3dtest1.JPG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/3dtest2.JPG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/3dtest3.JPG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                
+                                <p>For the induvidual projects we should keep in mind those those failure criteria and design with them in mind. For more advice on how to fix theese troubles you could Google "3d print troubleshooting" or visit this <a href="https://www.simplify3d.com/support/print-quality-troubleshooting/">website</a>. </p>
+								
+                                <hr />
+                                    
+                                <header>
+									<h3>3D printing non-subtractive model</h3>
+								</header>
+                                
+                                <p>For this section I used Fusion 360 for creating the model, Ultimaker Cura for printer settings and slicing, Cura 3 for 3D priting, and a plier and a rasp for postpocessing.</p>
+
+								<header>
+									<h3>Preface</h3>
+								</header>
+								<p>Last year I read an article about topology optimization, a mathematical method that optimizes shape, and its use in addative manufacturing. Since the goal of this project is to 3D print something that is not possible to create with subtractive manufacturing, I thought it would be a great opportunity to test topology optimization.</p>
+                                
+                                
+                                <header>
+									<h4>1. Design in Fusion 360</h4>
+								</header>
+                                
+                                <p>I knew from previous experiance that the topology optimization would give me a funky shape, often something in the style of nature. Something organic which would be difficult to build with subtracive manufacturing. Therefor I only designed a simple headphone wall mount stand:</p>
+                                <img src="images/Headphone_simple.PNG" style="width:70%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Next I implemented topology optimization using a feature in Fusion 360 called Shape Optimization, under Simulations. I created a model for given boundary conditions and loads:</p>
+                                <img src="images/Headphone_constraint.PNG" style="width: 13cm; height: 7cm;" alt="" /> 
+                                <img src="images/Headphone_load.PNG" style="width: 13cm; height: 7cm;" alt="" /> 
+                                <br>
+                                <br>
+                                I also declared part of the bottom of the model to be preserved, meaning that no material would be subtracted from tha region.
+                                <p>I then tried a few diffrent for mesh size and also what region, if any, I wanted to preserve. It took a few apptemts to get the funky shape I wanted, some of the shapes I got where:</p>
+                                <img src="images/Shape1.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/Shape2.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/Shape3.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>In the end I decided to use 3mm mesh size and preserve a part of the bottom of the model:</p>
+                                <img src="images/Headphone_mesh.PNG" style="width: 13cm; height: 7cm;" alt="" /> 
+                                <img src="images/Headphone_preserveregion.PNG" style="width: 13cm; height: 7cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>I then solved the problem (with Fusion 360) and moved the solution body to the design space, where I saved it as STL for the 3D printing:</p>
+                                <img src="images/Headphone_solve.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/Headphone_finalmodel.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <header>
+									<h4>2. 3D printing and settings configuration</h4>
+								</header>
+                                
+                                <p>Prior to configuring the settings for the print in Ultimaker Cura, I watched this <a href="https://www.youtube.com/watch?v=yBva4JPa4ko&t=0s">video</a> made by Arnar in Fablab and got some insturctions from him aswell. I decided to use Ultimaker 3 for the printing, although I hadn't used it for the constraint test, because it was available and Arnar said they where similar in quality but the Prusa is a little bit faster.</p>
+                                
+                                <p>For the setting configuration I mainly based it on printing time, overhanging constraint, and maintaning strength in the model. I knew I had to remain some strength in the model because it should be able to store headphones. Arnar explained to my that after about 30% infill the strength would not increase much, this <a href="https://www.researchgate.net/figure/Maximum-mean-tensile-force-vs-infill-percentage_fig1_311740076">research</a> indicates the same, as we can see on the figure below:</p>
+                                <img src="images/Maximum-mean-tensile-force-vs-infill-percentage.png" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Therefor I chose the infill as 40% in the reccomended settings. In the reccomended settings I used 0.2 as print profile to save printing time, added build plate adhesion and support:</p>
+                                <img src="images/stillingar3D.png" style="width:70%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                
+                                <p>In the custom settings I only changed two settings, the layer height as 0.15mm and maximum overhang angle as 60 degrees: </p>
+                                <img src="images/stillingar3D_2.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <img src="images/stillingar3D_3_overhang.PNG" style="width: 8cm; height: 8cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>The total print time was just over 3 hours. At first sight the outcome seemed pretty successful and no obvious defects where visable:</p>
+                                <img src="images/3dprint_1.JPG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>A little postprocessing was needed due to the supports. I removed them by using a plier and then polished the support surface with a rasp:</p>
+                                <img src="images/3dpostprocess.JPG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>I was not entirely happy with the surface that had touched the supports, it was not the same as the surfaces that hadn't touched a support. I also couldn't remove a support in a little hole. This image tries to show what I'm refering to:</p>
+                                <img src="images/3dfail.JPG" style="width:50%;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>I think this headphone wall mount stand turned out pretty good and I'm happy that the 3D printer captured most of the funky details resulting from the shape optimization. Next step would be to mount the stand to a wall for example with a double tape. The result is a cool 3D printed shape optimized headphone stand mounted to a wall!  </p>
+                                <img src="images/headphone_final.JPG" style="width:40%;" alt="" /> 
+                                <img src="images/headphone_final2.JPG" style="width:40%;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                
+                                <header>
+									<h3>Afterthoughts</h3>
+								</header> 
+                                <p>One thing in particular did go wrong on my part:</p>
+                                <ul>
+                                    <li>Looking back at the model I can see that there where no obvious overhangs over 60 degrees. But nontheless the Cura Slicer saw some of the parts as overhangs and added support, I think this could be because the slicer was confused by the funky shape that appears often on the model. If I would have thought it through I would have canceled the supports and print the model just as it was. I doubt there would have been fails because of overhang and the model would have looked better where the supports touched the surface and less postprocessing would have been needed.</li><br>
+                                </ul>
+                                
+                                                                   
+                                <hr />
+                                    
+                                <header>
+									<h3>3D scanning</h3>
+                                </header>
+                                <p>For this section I used my 8 megapixels Iphone 6 camera for photography and ReCap Photo for photogrammetry. I am 3D scanning a mini statue of a Spartan soldier:</p>
+                                <img src="images/Spartan.JPG" style="width:50%;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <header>
+									<h4>1. Photogrammetry basics and photos</h4>
+								</header>
+                                <p>I had no previous experiance with photogrammetry and 3D scanning. I asked Hafliði for some advices before I took the photos, and per his recommendation I had my object stationary and revolved around it with my camera taking photos from -30, 0 and 30 degress angles from the horizontal plane. I imported the photos, 75 in total, into ReCap Photo and when I got my results they where terrible. No edit would be able to fix that mess:</p>
+                                <img src="images/3dScan_fail.PNG" style="width: 9cm; height: 9cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>As I should have done in the beginning, I did some research on how to take photos for photogrammetry and read up on some of the basics of photogrammetry. For the basics of photogrammetry I read this <a href="https://www.gisresources.com/basic-of-photogrammetry_2/">article</a>, and on how to take photos for photogrammetry I read <a href="https://support.capturingreality.com/hc/en-us/articles/115001528211-Taking-pictures-for-photogrammetry">this</a> and <a href="http://janebeecr.blogspot.com/2017/03/how-to-take-photographs-in-order-to.html">that</a> articles. I learned some useful things, with them in mind I decided to approach the problem using three diffrent strategies:</p>
+                                <ol>
+                                    <li>Taking photos from 30 degree angle above the horizontal plane. One photo from "normal distance" away and one photo closer to the object, both from the same view. Repeating this until the one loop is finished. I took 70 photos for this strategy.</li><br>
+                                    <li>Taking photos from 30 degree angle above the horizontal plane. One photo close to the object from one view, then move around it with smaller steps than in strategy 1. Repeat unitl one loop is finished. I took 90 photos for this strategy</li><br>
+                                    <li>Same strategy as number 2, but using smaller steps when moving in a circle around the object. I took 214 photos for this strategy.</li><br>
+                                </ol>
+                                
+                                
+                                    
+                                <header>
+									<h4>2. Processing in ReCap Photo</h4>
+								</header>
+                                <p>I used my Autodesk educational licence to download ReCap Pro, which contains ReCap Photo. However the licence is limited to 100 photos per project, so I couldn't use strategy number 3. Before I began the process in ReCap Photo I watched this <a href="https://www.youtube.com/watch?v=f2-bEA3BGyc&t=444s">tutorial</a>.</p>
+                                
+                                <p>I uploaded the photos for strategies 1 and 2 into ReCap Photo through the dashboard and selected Auto-crop to save us time for cropping afterwards .</p>
+                                <img src="images/3DScan_crop.PNG" style="width:30%;" alt="" /> 
+                                <br>
+                                <br>
+                                    
+                                <p>Because this is a cloud based program, you will have to wait in queue before your project will be processed in the cloud. The waiting time can vary, for example for my first try I had to wait for about 16 hours, but for my second try (strageties 1 and 2) I only had to wait one hour or so.</p>
+                                <img src="images/ReCap_dashboard.PNG" style="width:70%;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>To decide whether I would use the result from strategy 1 or 2, I looked at the unedited outcomes: </p>
+                                <img src="images/3dScan_strat1.PNG" style="width: 9cm; height: 9cm;" alt="" /> 
+                                <img src="images/3DScan_strat2.PNG" style="width: 9cm; height: 9cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                <p>The outcomes where very similar, but the one using strategy 2 had the sword connected to the Spartian's head. So I decided to use the one from strategy 1, and see if it would need further processing. The bottom of this object is smooth, so I only cut away the bottom using: Edit->Slice and fill. To check if there where any defects in the model I used: Analyze->Detect and fix model issues. No defects where found, so the model is ready!</p>
+                                <img src="images/3DScan_final1.PNG" style="width: 9cm; height: 9cm;" alt="" /> 
+                                <img src="images/3DScan_final2.PNG" style="width: 9cm; height: 9cm;" alt="" /> 
+                                <br>
+                                <br>
+                                
+                                
+                                <p>I was pretty happy with the outcome. My camera is not the best and because there is a 100 images maximum the 3D scan it not perfect. The color scheme is very accurate but the outlines and details in the object, for example depth in lines on the armour, are not as accurate. But given the equipment and how many images I used I think the result is fine.</p>
+                                    
+                                
+                                <hr />
+                                
+                                <header>
+									<h3>Workload</h3>
+								</header> 
+                                <ul>
+                                    <li>1 hour: 3D test with Arnór, Halldór and Sverrir</li>
+                                    <li>4 hours: Draw and shape optimize in Fusion 360</li>
+                                    <li>1 hour: Print settings configuration</li>
+                                    <li>1 hour: Postprocessing</li>
+                                    <li>2 hour: 3D scan and photogrammetry</li>
+                                    <li>5 hours: Documentation</li>
+                                    <li>14 hours: Total</li>
+                                </ul>
+                                
+                                <header>
+									<h3>Design files</h3>
+								</header> 
+                                <p>Press <a href="Project3_DesignFiles/Project3_DesignFiles.zip">here</a> to download the design files for this project: 3D constraint test, headphone wall mount stand, and 3D scan of a Spartan soldier (I decided not to include the failed versions of the photogrammetry files because then I would exceed the 100MB limit of GitHub file size).</p>
+                                
+                                <header>
+									<h3>Search engine key words</h3>
+								</header> 
+                                <p>3d print constraints - all on one 3D printer test - 3D print troubleshooting - topology optimization - topology optimization fusion 360 - headpone stand wall mount - photogrammetry basics - recap photo tutorial - waiting in que recap photo</p>
+                                
+
+								
+                        </section>
+                                
+                    </div>
+                </div>
+
+								
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		
+    </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
