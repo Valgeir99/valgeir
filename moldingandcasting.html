@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Molding and casting</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Valgeir Einarsson</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+                            <li><a href="aboutme.html">About me</a></li>
+							<li>
+								<a href="#">Portfolio</a>
+								<ul>
+									<li><a href="framleiðsluferli.html">Manufacturing Processes</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Molding and casting</h2>
+							<p>Project 5</p>
+						</header>
+
+						<!-- Text -->
+							<section>
+								<h3>Project Description</h3>
+                                <p>This is a part of the final project which Halldór and I are working on together. This is the process of making a handle for our briefcase by using molding and casting. For this project we should make a negative silicone mold which is casted from the positive mold which is milled from a 100x100x50mm wax stock. Then the silicone mold is casted with some suitable material, for example resin to make the positive of the object. Due to external factors (Covid-19 and time contraints) it is satisfactory to only create the design files for the milling operation and a simulation video of the milling.</p>
+                                
+								<hr />
+                                
+        
+                                <header>
+									<h3>Preface</h3>
+								</header>
+                                <p>Before I started the design of the briefcase handle I took a look at some designs of briefcase handles on the Internet. The most common one is a handle with two horizontal holes which fit with somekind of mounting it is difficult to purchase (at least if you don't know the business):</p>
+                                <img src="images/handle_internet.jpg" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>It would be difficult to get this kind of a mount and I realised that making a horizontal hole would be impossible with this manufactoring process. Therefor I tried to think of another solution. One that would be feasible is a handle with cylinder like pins on both sides that would fit under this mount I bought: </p>
+                                <img src="images/mount_handle.jpg" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                
+                                <p>As mentioned above the physical mold and cast was not made, only the design files for the milling of the two positive molds of the briefcase handle. Below is the documentation.</p>
+                                
+                                
+								<header>
+									<h3>Molding and casting</h3>
+                                </header>
+                                <p>For this project I used Fusion 360 for the design of the handle and the creation of the two positive molds, and the CAM feature in Fusion 360 for generating toolpaths.</p>
+                                <header>
+									<h4>1. Design of handle</h4>
+								</header>
+                                <p>The main design constraint for this handle is the size of the wax stock we can make our mold from, 100x100x50mm. A typical handle would be somewhere near 130x50x20mm in size to be able to fit into your hand. Additionally I needed to add some material on both ends of the handle for the mounting system. But you have to work with what you got, so I just scaled it down a little bit so it would probably fit well into hands of childrens.</p>
+                                
+                                <p>I drew a simple handle in Fusion 360. It is just a simple rectangular tube with a spline to fit into your fingers:</p>
+                                <img src="images/handle_sketch.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Then I extruded it and added a fillet on most of the edges so it would be nearly cylindrical. Finally I extruded cylinder tabs of both sides of the handle for the mounting. The tabs could only be 4mm each because of lack of space.</p>
+                                <img src="images/handle_cad.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                
+                                <header>
+									<h4>2. Creating double negatives</h4>
+								</header>
+                                <p>Next step is to create the double negatives who will ultimately result in the two positive molds I will mill. For this part I watched these two videos: <a href="https://www.youtube.com/watch?v=vKZx9eHEL6o&t">https://www.youtube.com/watch?v=vKZx9eHEL6o&t</a> and <a href="https://www.youtube.com/watch?v=KBAp1XE9tB0">https://www.youtube.com/watch?v=KBAp1XE9tB0</a>.</p>
+                                
+                                <p>The handle is symmetrical with one axis, so in theory I could only mill one positive mold and then create two negative silcone molds from that mold. The only problem with that strategy, is in order to keep both silicone molds aligned, keys are often added so they are always in place. For that reason I decided it would be sensible to mill two positive molds rather than one.</p>
+                                
+                                <p>To create the double negatives I began to create a box that would cover the handle. This box should be the same size as the material you are going to cut with the milling machine. Therefor you will need to have a few things in mind when creating it. For my purpose I would need to keep a little extra space in the XY-plane to make a "bowl" because silicone will eventually be poured into the positive mold, and a little extra space for the keys to keep the molds aligned. Also, in order to not waist time when milling, the heigth of the box (Z-axis) should not be much larger than your object. Although keep in mind that I will add a hole later that the resin will be poured through, so adjust your heigth to the size of that hole.</p>
+                                
+                                <p>The box I created is 96x70x20mm. Remember when extruding the box to create a new body.</p>
+                                <img src="images/Handle_box.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Next I used the combine command to cut the positive handle inside the box so it would create a negative of the handle. The box was then cut into two halves to create the double negative:</p>
+                                <img src="images/Handle_doublenegative1.PNG" style= "width: 12cm; height: 12cm;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Keys where added along with the hole to pour the resin. The double negative is now finished:</p>
+                                <img src="images/Handle_doublenegative2.PNG" style= "width: 12cm; height: 12cm;" alt="" />
+                                <img src="images/Handle_doublenegative3.PNG" style= "width: 16cm; height: 12cm;" alt="" />
+                                <br>
+                                <br>
+                                
+                                
+                                
+                                
+                                
+                                <header>
+									<h4>3. Creating two positive molds</h4>
+								</header>
+                                <p>The only thing left before the toolpaths are created is to create two 100x100x50mm wax stocks around the two double negatives, and then use the combine command to create the stock with the positive mold carved into. The only thing to keep in mind when creating the stock is to set the bottom of the negative mold at the top of the stock, so we will not waiste time milling something unnecessary. This photo should show what I'm talking about:</p>
+                                <img src="images/Handle_stock.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>When you have used the combine command the two positive molds should look like this:</p>
+                                <img src="images/Handle_positive.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                
+                                <header>
+									<h4>4. Toolpaths</h4>
+								</header>
+                                <p>The toolpaths where created in the manufacture workspace inside of Fusion 360.</p>
+                                
+                                <p>Prior to this I had no experience with CAM, neither in Fusion nor any other CAM software. The only thing I knew was that I needed to create roughing and finishing toolpaths. I watched some videos to get started: <a href="https://www.youtube.com/watch?v=whGKwsEY4Vo">https://www.youtube.com/watch?v=whGKwsEY4Vo</a>, <a href="https://www.youtube.com/watch?v=Bd6-BQUCbVA">https://www.youtube.com/watch?v=Bd6-BQUCbVA</a> and <a href="https://www.youtube.com/watch?v=iqnvzxuXFTQ">https://www.youtube.com/watch?v=iqnvzxuXFTQ</a>. These videos only got me started, but I recommend just to experiment with the diffrent toolpaths Fusion 360 has to offer and see visually by simulating the removal of the material from the stock how they are performing.</p>
+                                
+                                <p>I began by defining the stock material, setting the origin in some sensible place and orient the axis. You will need to remember to orient the axis the same way as the milling machine is orientated, but I don't know what machine I will be using so it is likely you will need to change the orientation and generate the G-code again.</p>
+                                <img src="images/CAM_stock.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>Before you decide what toolpaths you will use, selecting a good tool for your operation is crucial. I had learned that flat end tools are good for flat surfaces and when removing a lot of material and other general milling actions, and ball end are more suitable when milling 3D curves such as fillets. Beforehand I knew that these tools could not exceed 3.5mm in diameter in order to fit in some places, as seen in this figue:</p>
+                                <img src="images/CAM_space.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>I could accsess both flat end (2 flutes) and ball end (3 flutes) tools with diameter 3.175mm at Fablab Reykjavík, so I added them inside of Fusion 360 by listing their dimensions:</p>
+                                <img src="images/CAM_tools.PNG" style="width:80%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>After some experimentation with diffrent toolpaths and help from Arnar at Fablab I found roughing and fininshing toolpaths that where good for me: </p>
+                                <p><b>Roughing:</b></p>
+                                <ol>
+                                    <li>3D Pocket with the flat end tool (1mm depth per pass) to clear most of the material from the stock and create rough edges on the handle:</li>
+                                    <img src="images/CAM_Pocket.PNG" style="width:50%;" alt="" />
+                                </ol>
+                                <p><b>Finishing:</b></p>
+                                <ol>
+                                    <li>3D Paralell pass in 0 degrees (0.5mm per pass) with the ball end tool to create the fine 3D curves of the handle:</li>
+                                    <img src="images/CAM_Paralell1.PNG" style="width:50%;" alt="" />
+                                    <li>3D Paralell pass in 90 degrees (0.5mm per pass) with the ball end tool to create the fine 3D curves of the handle:</li>
+                                    <img src="images/CAM_Parallell2.PNG" style="width:50%;" alt="" />
+                                </ol>
+                                
+                                <p>The final outcome will look something like this:</p>
+                                <img src="images/CAM_Final.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>This is fine enough for my purpose. It is always possible to make the mold even finer but that requires much more milling time, you could for example use a finer tool or make more passes with the milling machine. </p>
+                                
+                                <p>The second mold, which is almost identical to the first one, is milled the exact same way. The final outcome will be something like this:</p>
+                                <img src="images/CAM_Final2.PNG" style="width:50%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>The only thing left is to adjust the feeds and speeds accordingly to the tools I will use and the stock material (wax). I used this <a href="https://pub.pages.cba.mit.edu/feed_speeds/">website</a> to calculate the spindle RPM, XY feedrate and plunge feedrate:</p>
+                                <img src="images/CAM_feeds1.PNG" style="width:40%;" alt="" />
+                                <img src="images/CAM_feeds2.PNG" style="width:40%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>I feel like these values, especially the spindle RPM, are a bit low. I checked other sources and one of them gave me these values for a 3.175mm flat end tool milling into wax:</p>
+                                <img src="images/CAM_feeds3.PNG" style="width:20%;" alt="" />
+                                <br>
+                                <br>
+                                
+                                <p>If I where to actually mill the two postivive molds I would consult with someone at Fablab before doing so, just to be safe. But for the time being I used the feeds and speeds values from the original source.</p>
+                                
+                                <p>It is recommended to set these feeds and speeds values for each tool inside of the tool library, instead of changing them for each milling operation.</p>
+                                
+                                <p>The total milling time for each positive mold is about 3 hours. If some feeds and speeds values are changed the time could decrease significantly. </p>
+                                
+                                <p>A sped up simulation of the two positive molds can be seen down below:</p>
+                                <video width="40%" controls>
+                                    <source src="images/Mold1video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video width="40%" controls>
+                                    <source src="images/Mold2video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                
+                                
+                                <header>
+                                    <h4>5. G-code</h4>
+                                </header>
+                                <p>Next step would be to generate the G-code the milling machine will use as instructions. Because I will not be milling the physical product and I'm not sure which machine we would be using I will just set the Shopbot as the machine and thus saving the G-code file as an .sbp file.</p>
+                                
+                                
+                                
+                                
+                                <header>
+									<h3>Afterthoughts</h3>
+								</header> 
+                                <p>For the briefcase to work we would need the handle, so it would have been fun to create the physical product. Maybe I will finish it another time. Overall I think this project went pretty well.</p>
+                                
+                                
+                                
+                                <hr />
+                                
+                                <header>
+									<h3>Workload</h3>
+								</header> 
+                                <ul>
+                                    <li>1 hour: Thinking about the design</li>
+                                    <li>2 hours: Finding a mount for the handle</li>
+                                    <li>1 hour: Model the handle in Fusion 360</li>
+                                    <li>4 hours: Creating the two positive molds in Fusion 360</li>
+                                    <li>3 hours: Creating toolpaths</li>
+                                    <li>6 hours: Documentation</li>
+                                    <li>17 hours: Total</li>
+                                </ul>
+                                
+                                <header>
+									<h3>Design files</h3>
+								</header> 
+                                <p>Press <a href="Project5_DesignFiles/Project5_DesignFiles.zip">here</a> to download the Fusion 360 design files with modelling and toolpahts, and the G-codes for the Shopbot.</p>
+                                
+                                <header>
+									<h3>Search engine key words</h3>
+								</header> 
+                                <p>briefcase handle - molding and casting - double negative - fusion 360 toolpaths - feeds and speeds - cut depth - fusion 360 cam simulation video - g-code</p>
+                                
+
+								
+                        </section>
+                                
+                    </div>
+                </div>
+
+								
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		
+    </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
